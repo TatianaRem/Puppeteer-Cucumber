@@ -69,7 +69,7 @@ Then(
     const greyButtonSelector = "button";
 
     await page.waitForSelector(greyButtonSelector, {
-      visible: true,
+      visible: false,
     });
     const actual = await page.$eval(
       greyButtonSelector,
