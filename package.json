@@ -1,0 +1,20 @@
+{
+  "name": "5.-puppeteer-2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "booking.test.js",
+  "scripts": {
+    "test": "jest --watchAll --detectOpenHandles",
+    "cucumber": "cucumber-js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chai": "^4.3.7",
+    "cucumber": "^6.0.7",
+    "jest": "^29.6.2",
+    "jest-puppeteer": "^9.0.0",
+    "puppeteer": "^20.9.0"
+  }
+}
