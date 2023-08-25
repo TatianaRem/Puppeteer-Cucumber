@@ -68,18 +68,21 @@ Then(
   async function (Забронировать) {
     const greyButtonSelector = "button";
 
-    await page.waitForSelector(greyButtonSelector, {
-      visible: false,
-    });
-    const actual = await page.$eval(
-      greyButtonSelector,
-      (link) => link.textContent
+    await page.waitForSelector(greyButtonSelector);
+
+    const isButtonDisabled = await page.$eval(greyButtonSelector, (button) => button.disabled
     );
-    expect(actual).toContain(Забронировать);
+
+    expect(isButtonDisabled).toBe(true);
+    const actualButtonText = await page.$eval(greyButtonSelector, (button) => button.textContent
+    );
+
+    expect(actualButtonText).toContain(Забронировать);
 
     return "pending";
   }
 );
+
 
 Before(async () => {
   browser = await puppeteer.launch();
